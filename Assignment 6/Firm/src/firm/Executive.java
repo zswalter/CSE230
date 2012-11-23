@@ -1,13 +1,37 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Executive.java
+ * 
+ * Represents an executive staff member, who can earn a bonus.
  */
 package firm;
 
-/**
- *
- * @author Zachary Walters
- */
-public class Executive {
+public class Executive extends Employee
+{
+    private double bonus;
     
+    //Costructor: sets up this executive with the specified information
+    public Executive(String eName, String eAddress,
+            String ePhone, String socSecNumber, double rate)
+    {
+        super(eName, eAddress, ePhone, socSecNumber, rate);
+        
+        bonus = 0; // bonus has yet to be awarded
+    }
+    
+    //awards the specified bonus to this executive
+    public void awardBonus (double execBonus)
+    {
+        bonus = execBonus;
+    }
+    
+    //computes and returns the pay for an executive, which is the
+    //regular employee payment plus a one-time bonus.
+    public double pay()
+    {
+        double payment = super.pay() + bonus;
+        
+        bonus = 0;
+        
+        return payment;
+    }
 }
