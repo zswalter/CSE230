@@ -12,7 +12,7 @@ public class Staff
     //constructor: sets up the list of staff members.
     public Staff()
     {
-        staffList = new StaffMember[6];
+        staffList = new StaffMember[8];
         
         staffList[0] = new Executive ("Sam", "123 Main Line", "555-0469", 
                 "123-45-6789", 2423.07);
@@ -24,10 +24,17 @@ public class Staff
                 "958-47-3625", 10.55);
         staffList[4] = new Volunteer ("Norm", "987 Suds Blvd.", "555-8374");
         staffList[5] = new Volunteer ("Cliff", "321 Duds Lane", "555-7282");
+        staffList[6] = new Commission ("Dan", "956 Dodge Ave.", "555-9586", 
+                "975-31-3579", 6.25, 20.00);
+        staffList[7] = new Commission ("Terry", "555 Fifty-Five Blvd.",
+                "555-5555", "958-55-5555", 19.75, 15.00);
         
         ((Executive)staffList[0]).awardBonus (500.00);
-        
         ((Hourly)staffList[3]).addHours (40);
+        ((Commission)staffList[6]).addHours(35);
+        ((Commission)staffList[6]).addSales(400.00);
+        ((Commission)staffList[7]).addHours(40);
+        ((Commission)staffList[7]).addSales(950.00);
     }
     
     //Pays all the employees
