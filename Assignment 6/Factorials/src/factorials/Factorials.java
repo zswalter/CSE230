@@ -1,19 +1,27 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Factorials.java
+ * 
+ * Reads aintegers from the user and prints the factorial of each
  */
 package factorials;
+import java.util.Scanner;
 
-/**
- *
- * @author Zachary Walters
- */
-public class Factorials {
+public class Factorials 
+{
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) 
+    {
+        String keepGoing = "y";
+        Scanner scan = new Scanner(System.in);
+        
+        while (keepGoing.equals("y") || keepGoing.equals("Y"))
+        {
+            System.out.print("Enter an integer: ");
+            int val = scan.nextInt();
+            System.out.println("Factorial(" + val + ") = "
+                    + MathUtils.factorial(val));
+            System.out.print("Another factorial? (y/n) ");
+            keepGoing = scan.next();
+        }
     }
 }
