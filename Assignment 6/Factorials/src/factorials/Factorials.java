@@ -17,9 +17,17 @@ public class Factorials
         while (keepGoing.equals("y") || keepGoing.equals("Y"))
         {
             System.out.print("Enter an integer: ");
-            int val = scan.nextInt();
+            try
+            {
+                int val = scan.nextInt();
+            
             System.out.println("Factorial(" + val + ") = "
                     + MathUtils.factorial(val));
+            }
+            catch (IllegalArgumentException exception)
+            {
+                System.out.println("Integer out of range!");
+            }
             System.out.print("Another factorial? (y/n) ");
             keepGoing = scan.next();
         }
