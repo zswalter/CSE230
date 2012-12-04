@@ -26,7 +26,8 @@ public class Factorials
             }
             catch (IllegalArgumentException exception)
             {
-                System.out.println("Integer out of range!");
+                System.out.println("Integer out of range!(Integer must"
+                        + " be between 1 and 16)");
             }
             System.out.print("Another factorial? (y/n) ");
             keepGoing = scan.next();
